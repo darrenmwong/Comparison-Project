@@ -1,11 +1,37 @@
+<div class="container-fluid">
+	<div class="row">
+			
+<% @macy.each do |macys| %>
 
-<% @testing.each do |test| %>
+	<div class=".col-xs-4 pull-left">	
 
-<% img = test.at_css('.thumbnailImage') %><br>
-<img src="<%= img.attribute("src") %>"><br>
-<%= test.at_css('.shortDescription').text %><br>
-<%= test.at_css('.prices').text %><br>
+<%= macys.at_css('.prices').text %><br>
+<%= macys.at_css('.shortDescription').text %><br>
+<% macy_img = macys.at_css('.imageLink.productThumbnailLink.absolutecrossfade img') %>
+<img src="<%= macy_img.attribute('src') %>">
+		
+	</div
+
+
+
 
 <% end %>
+		
+<% @bloom.each do |info| %>
+
+	<div class=".col-xs-4 pull-left">
+
+<% img = info.at_css('.thumbnailImage') %><br>
+<img src="<%= img.attribute("src") %>"><br>
+<%=	info.at_css('.shortDescription').text %><br>
+<%= info.at_css('.prices').text %><br>
+
+		
+	</div>
+
+<% end %>
+		
+	</div>
+</div>
 
 

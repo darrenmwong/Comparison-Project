@@ -150,6 +150,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
+  json
   meta_request
   nokogiri (~> 1.6.1)
   pry

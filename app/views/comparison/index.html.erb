@@ -1,5 +1,21 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<div class="darren">
+
 <%= form_tag("comparison/search", method: "get") do %>
-  <%= label_tag(:search, "Search for:") %>
-  <%= text_field_tag(:search) %>
-  <%= submit_tag("Search") %>
+ 
+ <div class="title">
+  	<%= label_tag(:search, "Comparison Search") %><br>
+ </div>
+
+<h1 class="searchBar1">
+  	<%= text_field_tag (:search) %>
+ </h1>
+
+  <button type:submit class="btn btn-large">Search</button>
 <% end %>
+			</div>
+		</div>
+	</div>
+</div>
