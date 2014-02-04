@@ -1,0 +1,11 @@
+
+<% @testing.each do |test| %>
+
+<% img = test.at_css('.thumbnailImage') %><br>
+<img src="<%= img.attribute("src") %>"><br>
+<%= test.at_css('.shortDescription').text %><br>
+<%= test.at_css('.prices').text %><br>
+
+<% end %>
+
+
