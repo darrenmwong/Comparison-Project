@@ -1,37 +1,44 @@
-<div class="container-fluid">
-	<div class="row">
-			
-<% @macy.each do |macys| %>
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
 
-	<div class=".col-xs-4 pull-left">	
-
-<%= macys.at_css('.prices').text %><br>
-<%= macys.at_css('.shortDescription').text %><br>
-<% macy_img = macys.at_css('.imageLink.productThumbnailLink.absolutecrossfade img') %>
-<img src="<%= macy_img.attribute('src') %>">
-		
-	</div
-
-
-
-
-<% end %>
-		
-<% @bloom.each do |info| %>
-
-	<div class=".col-xs-4 pull-left">
-
-<% img = info.at_css('.thumbnailImage') %><br>
-<img src="<%= img.attribute("src") %>"><br>
-<%=	info.at_css('.shortDescription').text %><br>
-<%= info.at_css('.prices').text %><br>
-
-		
-	</div>
-
-<% end %>
-		
-	</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
 
+
+
+
+
+<div class="container-fluid">
+	<div class="row">
+		<ul class="list-inline">
+
+
+<%= render partial: "nordstrom" %>
+			
+<%= render partial: "macys" %>
+		
+<%= render partial: "bloomies" %>
+		</ul>
+
+
+	</div>
+</div>
 

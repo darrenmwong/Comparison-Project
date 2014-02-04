@@ -1,0 +1,9 @@
+<% @bloom.each do |info| %>
+
+
+	<% img = info.at_css('.thumbnailImage') %><br>
+	<img src="<%= img.attribute("src") %>"><br>
+	<%=	info.at_css('.shortDescription').text %><br>
+	<%= info.at_css('.prices').text %><br>		
+
+<% end %>

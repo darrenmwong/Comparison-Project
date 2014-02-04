@@ -1,0 +1,9 @@
+<% @macy.each do |macys| %>
+
+  <% macy_img = macys.at_css('.imageLink.productThumbnailLink.absolutecrossfade img') %>
+  <img src="<%= macy_img.attribute('src') %>"><br>
+  <%= macys.at_css('.prices').text %><br>
+  <%= macys.at_css('.shortDescription').text %><br>
+
+ 
+<% end %>

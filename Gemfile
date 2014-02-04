@@ -13,6 +13,8 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
+gem 'gon'
+
 gem 'json'
 
 gem "nokogiri", "~> 1.6.1"
