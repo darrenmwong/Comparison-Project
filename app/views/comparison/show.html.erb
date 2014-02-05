@@ -26,9 +26,9 @@
 
 
 
-<div class="container-fluid">
-	<div class="row">
-		<ul class="list-inline">
+<!-- <div class="container-fluid">
+	<div class="row"> -->
+		<div class=".col-md-6 .col-md-offset-6">
 
 <% if @store_id == '1' %>
 <%= render partial: "bloomies" %>
@@ -36,12 +36,14 @@
 <%= render partial: "macys" %>
 <% elsif @store_id == '3' %>
 <%= render partial: "nordstrom" %>
+<% elsif @store_id == '4' %>
+<%= render partial: "saks" %>
 			<% end %>
 
 		
-		</ul>
 
-
-	</div>
+<!-- 
+		</div>
+	</div> -->
 </div>
 
