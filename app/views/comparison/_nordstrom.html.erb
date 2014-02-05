@@ -1,7 +1,9 @@
 <% @nord.each do |nords| %>
+<div class=".Comparison">
 	<% nord_img = nords.at_css('img') %>
 	<img src="<%= nord_img.attribute('data-original') %>"><br>
 	<%= nords.at_css('a').text %><br>
 	<%= nords.at_css('.price.regular').text %><br>
+</div>
 
 	<% end %>

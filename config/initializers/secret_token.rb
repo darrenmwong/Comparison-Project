@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Comparison::Application.config.secret_key_base = '15107487b01e400fa1138d9826f835917151b8f5bff8a4e488f6b0612f35a2f41b5217c541f65140bf3e2e5271b2d80848608f5d2771622c5fc03965c1b96b0f'
+Comparison::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
