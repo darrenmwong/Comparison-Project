@@ -30,12 +30,15 @@
 	<div class="row">
 		<ul class="list-inline">
 
-
-<%= render partial: "nordstrom" %>
-			
-<%= render partial: "macys" %>
-		
+<% if @store_id == '1' %>
 <%= render partial: "bloomies" %>
+<% elsif @store_id == '2' %>
+<%= render partial: "macys" %>
+<% elsif @store_id == '3' %>
+<%= render partial: "nordstrom" %>
+			<% end %>
+
+		
 		</ul>
 
 

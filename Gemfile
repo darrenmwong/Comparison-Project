@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
 group :development do
-gem 'better_errors'
-gem 'binding_of_caller'
-gem 'meta_request'
+# gem 'better_errors'
+# gem 'binding_of_caller'
+# gem 'meta_request'
 gem 'pry'
-gem 'pry-byebug'
-gem 'pry-rails'
-gem 'awesome_print'
-gem 'quiet_assets' 
+# gem 'pry-byebug'
+# gem 'pry-rails'
+# gem 'awesome_print'
+# gem 'quiet_assets' 
 end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'

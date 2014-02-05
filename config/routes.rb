@@ -1,4 +1,5 @@
 Comparison::Application.routes.draw do
- resources :comparison
+	resources :comparison
  root to: "comparison#index"
+
 end

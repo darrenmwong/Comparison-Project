@@ -3,7 +3,7 @@
 		<div class="col-md-12 text-center">
 			<div class="darren">
 
-<%= form_tag("comparison/search", method: "get") do %>
+<%= form_tag( 'comparison/search', method: "get") do %>
  
  <div class="title">
   	<%= label_tag(:search, "Comparison Search") %><br>
@@ -13,9 +13,16 @@
   	<%= text_field_tag (:search) %>
  </h1>
 
+<%= select_tag(:store_id, options_for_select([['Bloomingdales', 1], ['Macys', 2], ['Nordstrom', 3], ['Saks Fifth Avenue', 4]]))%>
+
+
+<!-- Button -->
   <button type:submit class="btn btn-large">Search</button>
 <% end %>
 			</div>
 		</div>
 	</div>
 </div>
+
+
+

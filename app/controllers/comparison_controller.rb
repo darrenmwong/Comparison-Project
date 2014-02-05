@@ -4,27 +4,37 @@ class ComparisonController < ApplicationController
 	require 'nokogiri'
 	require 'json'
 
-	api_key = 'mwq34bwv75gb4x486dffhtyd'
 
 
 	def index
 	end
 
-
 	def show
-		search = params[:search]
+		@store_id = params[:store_id]
+		search = params[:search].to_s
 		newsearch = search.gsub(/ /,'+')
-		nord_url = "http://shop.nordstrom.com/sr?keyword=#{newsearch}&origin=keywordsearch&contextualcategoryid=0"
-		macy_url = "http://www1.macys.com/shop/search?keyword=#{newsearch}"
-		bloom_url = "http://www1.bloomingdales.com/shop/search?keyword=#{newsearch}"
-		bloom_doc = Nokogiri::HTML(open(bloom_url))
-		macy_doc = Nokogiri::HTML(open(macy_url))
-		nord_doc = Nokogiri::HTML(open(nord_url))
-		@bloom = bloom_doc.css(".productThumbnail.showQuickView")
-		@macy = macy_doc.css(".productThumbnail")
-		@nord = nord_doc.css(".fashion-results")
+		if @store_id == '1'
+			bloom_url = "http://www1.bloomingdales.com/shop/search?keyword=#{newsearch}"
+			bloom_doc = Nokogiri::HTML(open(bloom_url))
+			@bloom = bloom_doc.css(".productThumbnail.showQuickView")
+		elsif @store_id == '2'
+			macy_url = "http://www1.macys.com/shop/search?keyword=#{newsearch}"
+			macy_doc = Nokogiri::HTML(open(macy_url))
+			@macy = macy_doc.css(".productThumbnail")
+		elsif @store_id == '3'
+			nord_url = "http://shop.nordstrom.com/sr?keyword=#{newsearch}&origin=keywordsearch&contextualcategoryid=0"
+			nord_doc = Nokogiri::HTML(open(nord_url))
+			@nord = nord_doc.css(".fashion-item")
+		elsif @store_id == '4'
+			sak_url = "http://www.saksfifthavenue.com/search/EndecaSearch.jsp?bmForm=endeca_search_form_one&bmFormID=kf_Qd57&bmUID=kf_Qd58&bmIsForm=true&bmPrevTemplate=%2Fsearch%2FEndecaSearch.jsp&bmText=SearchString&SearchString=#{newsearch}&submit-search=&bmSingle=N_Dim&N_Dim=0&bmHidden=Ntk&Ntk=Entire+Site&bmHidden=Ntx&Ntx=mode%2Bmatchpartialmax&bmHidden=prp8&prp8=t15&bmHidden=prp13&prp13=&bmHidden=sid&sid=143FDD7A465A"
+			binding.pry
+			sak_doc = Nokogiri::HTML(open(sak_url))
+			binding.pry
+			@sak = sak_doc.css("product-container")
 
+		end
 
+			render :show
 	end
 
 end
