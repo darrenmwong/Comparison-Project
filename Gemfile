@@ -15,6 +15,8 @@ gem 'rails', '4.0.2'
 
 gem 'devise'
 
+gem 'rails_12factor', group: :production
+
 gem 'gon'
 
 gem 'json'
@@ -23,8 +25,7 @@ gem 'typhoeus'
 
 gem "nokogiri", "~> 1.6.1"
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -51,6 +52,10 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+
+
+ruby "2.0.0"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
