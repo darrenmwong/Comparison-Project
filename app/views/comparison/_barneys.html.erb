@@ -1,20 +1,20 @@
-<div class="row">
 
+<div class="rowLabel">
 
-<% @bloom.each do |info| %>
-	<div class="col-sm-4 col-xs-6">
-		<div class="rowConfig">
-	<% img = info.at_css('.thumbnailImage') %><br>
-	<img src="<%= img.attribute("src") %>"><br>
-	<%=	info.at_css('.shortDescription').text %><br>
-	<%= info.at_css('.prices').text %><br>		
+	<% @barn.each do |barns| %>
+		<div class="col-sm-4 col-xs-6">
+			<div class="rowConfig">
+			<% barn_img = barns.at_css('p') %>
+			<img class="pictureSize" src="<%= barn_img.attribute('data-product-quickview-image') %>"><br>
+			<%= barns.at_css('.name').text %><br>
+			<%= barns.at_css('.standardprice').text %><br>
 	<!-- Modal Button -->
-			<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal_<%= @bloom.index(info)%>">
+			<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal_<%= @barn.index(barns) %>">
   					Product Info
 			</button>
 
 	<!-- Modal -->
-			<div class="modal fade" id="myModal_<%= @bloom.index(info) %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal fade" id="myModal_<%= @barn.index(barns) %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   				<div class="modal-dialog">
    					<div class="modal-content">
      				    <div class="modal-header">
@@ -23,7 +23,7 @@
      					</div>
     <!--Modal Body -->
      		 <div class="modal-body">
-       			<img src="<%= img.attribute("src") %>"><br>
+				<img src="<%= barn_img.attribute('data-product-quickview-image') %>">
      		 </div>
     <!-- Modal Bottom -->
     			  			<div class="modal-footer">
@@ -32,9 +32,8 @@
    		   		    </div>
   				</div>
 			</div>
+		</div>
 		</div><!-- ending row div -->
-	</div>
-
 	<% end %>
 
 </div><!-- end container -->

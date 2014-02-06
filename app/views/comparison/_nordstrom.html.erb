@@ -1,9 +1,40 @@
-<% @nord.each do |nords| %>
-<div class=".Comparison">
-	<% nord_img = nords.at_css('img') %>
-	<img src="<%= nord_img.attribute('data-original') %>"><br>
-	<%= nords.at_css('a').text %><br>
-	<%= nords.at_css('.price.regular').text %><br>
-</div>
+<div class="row">
 
+	<% @nord.each do |nords| %>
+		<div class="col-sm-4 col-xs-6">
+			<div class="rowConfig">
+			<% nord_img = nords.at_css('img') %>
+			<img class="pictureSize" src="<%= nord_img.attribute('data-original') %>"><br>
+			<%= nords.at_css('a').text %><br>
+			<% modal = nords.at_css('a').text %><br>
+			<%= nords.at_css('.price.regular').text %><br>
+	<!-- Modal Button -->
+			<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal_<%= @nord.index(nords) %>">
+  					Product Info
+			</button>
+
+	<!-- Modal -->
+			<div class="modal fade" id="myModal_<%= @nord.index(nords) %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  				<div class="modal-dialog">
+   					<div class="modal-content">
+     				    <div class="modal-header">
+      					  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      					 	 <h4 class="modal-title" id="myModalLabel">Title</h4>
+     					</div>
+    <!--Modal Body -->
+     		 <div class="modal-body">
+       			<img src="<%= nord_img.attribute('data-original') %>"><br>
+     		 </div>
+    <!-- Modal Bottom -->
+    			  			<div class="modal-footer">
+      	 					 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+   				 	    	</div>
+   		   		    </div>
+  				</div>
+			</div>
+		</div><!-- ending row div -->
+	</div>
 	<% end %>
+
+</div><!-- end container -->
+	

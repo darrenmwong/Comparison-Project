@@ -1,49 +1,16 @@
-<!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
+<div class=".showRow">
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+  <% if @store_id == '1' %>
+   <%= render partial: "bloomies" %>
+  <% elsif @store_id == '2' %>
+    <%= render partial: "macys" %>
+  <% elsif @store_id == '3' %>
+   <%= render partial: "nordstrom" %>
+  <% elsif @store_id == '4' %>
+   <%= render partial: 'barneys' %>
+  <% elsif @store_id == '5' %>
+    <%= render partial: "saks" %>
+	<% end %>
 
-
-
-
-
-<!-- <div class="container-fluid">
-	<div class="row"> -->
-		<div class=".showRow">
-
-<% if @store_id == '1' %>
-<%= render partial: "bloomies" %>
-<% elsif @store_id == '2' %>
-<%= render partial: "macys" %>
-<% elsif @store_id == '3' %>
-<%= render partial: "nordstrom" %>
-<% elsif @store_id == '4' %>
-<%= render partial: "saks" %>
-			<% end %>
-
-		
-
-<!-- 
-		</div>
-	</div> -->
 </div>
 

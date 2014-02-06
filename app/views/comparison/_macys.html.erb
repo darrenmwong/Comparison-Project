@@ -1,9 +1,38 @@
-<% @macy.each do |macys| %>
+<div class="row">
 
+<% @macy.each do |macys| %>
+	<div class="col-sm-4 col-xs-6">
+		<div class="rowConfig">
   <% macy_img = macys.at_css('.imageLink.productThumbnailLink.absolutecrossfade img') %>
   <img src="<%= macy_img.attribute('src') %>"><br>
   <%= macys.at_css('.prices').text %><br>
   <%= macys.at_css('.shortDescription').text %><br>
+	<!-- Modal Button -->
+			<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal_<%= @macy.index(macys) %>">
+  					Product Info
+			</button>
 
- 
-<% end %>
+	<!-- Modal -->
+<div class="modal fade" id="myModal_<%= @macy.index(macys) %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+		    <div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			 	 <h4 class="modal-title" id="myModalLabel">Title</h4>
+			</div>
+    <!--Modal Body -->
+    <div class="modal-body">
+       	<img src="<%= macy_img.attribute('src') %>"><br>
+    </div>
+    <!-- Modal Bottom -->
+<div class="modal-footer">
+ 	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+		</div>
+	</div>
+</div>
+</div><!-- ending row div -->
+</div>
+	<% end %>
+
+</div><!-- end container -->
