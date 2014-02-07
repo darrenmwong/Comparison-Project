@@ -11,6 +11,64 @@ class ComparisonController < ApplicationController
 	def index
 	end
 
+	def modal
+	end
+
+	def moreInfo
+		@price = params[:price]
+		@description = params[:description]
+		@img = params[:img]
+		@store_id = params[:store_id]
+		temp =@description.gsub(" ", '+')
+		temp1 = temp.delete(",")
+		temp2 = temp1.delete("'")
+		temp3 = temp2.delete("-")
+		newsearch = temp3
+		if @store_id =='1'
+			macy_url = "http://www1.macys.com/shop/search?keyword=#{newsearch}"
+			macy_doc = Nokogiri::HTML(Typhoeus.get(macy_url).body)
+			@macy = macy_doc.css(".productThumbnail")
+			nord_url = "http://shop.nordstrom.com/sr?keyword=#{newsearch}&origin=keywordsearch&contextualcategoryid=0"
+			nord_doc = Nokogiri::HTML(Typhoeus.get(nord_url).body)
+			@nord = nord_doc.css(".fashion-item")
+			barn_url = "http://www.barneys.com/on/demandware.store/Sites-BNY-Site/default/Search-Show?q=#{newsearch}"
+			barn_doc = Nokogiri::HTML(Typhoeus.get(barn_url).body)
+			@barn = barn_doc.css('.product.producttile')
+		elsif @store_id == '2'
+			bloom_url = "http://www1.bloomingdales.com/shop/search?keyword=#{newsearch}"
+			bloom_doc = Nokogiri::HTML(Typhoeus.get(bloom_url).body)
+			@bloom = bloom_doc.css(".productThumbnail.showQuickView")
+			nord_url = "http://shop.nordstrom.com/sr?keyword=#{newsearch}&origin=keywordsearch&contextualcategoryid=0"
+			nord_doc = Nokogiri::HTML(Typhoeus.get(nord_url).body)
+			@nord = nord_doc.css(".fashion-item")
+			barn_url = "http://www.barneys.com/on/demandware.store/Sites-BNY-Site/default/Search-Show?q=#{newsearch}"
+			barn_doc = Nokogiri::HTML(Typhoeus.get(barn_url).body)
+			@barn = barn_doc.css('.product.producttile')
+		elsif @store_id == '3'
+			bloom_url = "http://www1.bloomingdales.com/shop/search?keyword=#{newsearch}"
+			bloom_doc = Nokogiri::HTML(Typhoeus.get(bloom_url).body)
+			@bloom = bloom_doc.css(".productThumbnail.showQuickView")
+			macy_url = "http://www1.macys.com/shop/search?keyword=#{newsearch}"
+			macy_doc = Nokogiri::HTML(Typhoeus.get(macy_url).body)
+			@macy = macy_doc.css(".productThumbnail")
+			barn_url = "http://www.barneys.com/on/demandware.store/Sites-BNY-Site/default/Search-Show?q=#{newsearch}"
+			barn_doc = Nokogiri::HTML(Typhoeus.get(barn_url).body)
+			@barn = barn_doc.css('.standardprice')
+		elsif @store_id == '4'
+			bloom_url = "http://www1.bloomingdales.com/shop/search?keyword=#{newsearch}"
+			bloom_doc = Nokogiri::HTML(Typhoeus.get(bloom_url).body)
+			@bloom = bloom_doc.css(".productThumbnail.showQuickView")
+			macy_url = "http://www1.macys.com/shop/search?keyword=#{newsearch}"
+			macy_doc = Nokogiri::HTML(Typhoeus.get(macy_url).body)
+			@macy = macy_doc.css(".productThumbnail")
+			nord_url = "http://shop.nordstrom.com/sr?keyword=#{newsearch}&origin=keywordsearch&contextualcategoryid=0"
+			nord_doc = Nokogiri::HTML(Typhoeus.get(nord_url).body)
+			@nord = nord_doc.css(".fashion-item")
+	end
+	render :showResult
+	end
+
+
 	def show
 		@store_id = params[:store_id]
 		search = params[:search].to_s

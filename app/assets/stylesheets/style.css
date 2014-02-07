@@ -5,6 +5,13 @@ max-width:240px;
 max-height:240px;
 }
 
+.loader {
+	background-image: url(http://i.imgur.com/n9LlmqK.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	height:100px;
+}
+
 .rowLabel {
 	right:25px;
 }

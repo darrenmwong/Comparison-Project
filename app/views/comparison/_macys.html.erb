@@ -7,6 +7,37 @@
   <img src="<%= macy_img.attribute('src') %>"><br>
   <%= macys.at_css('.prices').text %><br>
   <%= macys.at_css('.shortDescription').text %><br>
+
+
+
+
+
+
+
+<%= form_tag( '/comparison/moreInfo/compare', method: "get") do %>
+<%= hidden_field_tag(:price, "#{macys.at_css('.prices').text}")  %>
+
+<%= hidden_field_tag(:description, "#{macys.at_css('.shortDescription').text}" )%>
+<%= hidden_field_tag(:img, "#{macy_img.attribute('src')}") %>
+<%= hidden_field_tag(:store_id, "#{@store_id}") %>
+<button type:submit class='btn btn-large'>Compare</button>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<!-- Modal Button -->
 			<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal_<%= @macy.index(macys) %>">
   					Product Info

@@ -4,4 +4,7 @@ Comparison::Application.routes.draw do
 
  root to: "comparison#index"
 
+ get 'comparison/modalExample', to: 'comparison#modal'
+
+ get 'comparison/moreInfo/compare', to: 'comparison#moreInfo'
 end

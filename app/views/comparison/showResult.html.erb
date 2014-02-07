@@ -1,0 +1,44 @@
+<div class=".showRow">
+
+  <div class="col-md-12">
+    <img src="<%= @img %>">
+      <ul>
+        <h1><%= @description %> </h1>
+        <li><%= @price %> </li>
+      </ul>
+
+
+
+  <% if @store_id == '1' %>
+   <li>    <%= render partial: "macysResults" %></li>
+   <li>   <%= render partial: "nordstromResults" %></li>
+   <li>     <%= render partial: 'barneysResults' %></li>
+
+  <% elsif @store_id == '2' %>
+   <li>  <%= render partial: "bloomiesResults" %> </li>
+   <li>  <%= render partial: "nordstromResults" %> </li>
+   <li>   <%= render partial: 'barneysResults' %> </li>
+
+
+  <% elsif @store_id == '3' %>
+    <li> <%= render partial: "bloomiesResults" %> </li>
+    <li> <%= render partial: "macysResults" %> </li>
+    <li> <%= render partial: 'barneysResults' %> </li>
+
+  <% elsif @store_id == '4' %>
+   <li>  <%= render partial: "bloomiesResults" %> </li>
+   <li>  <%= render partial: "macysResults" %> </li>
+  <li>  <%= render partial: "nordstromResults" %> </li>
+
+  <% elsif @store_id == '5' %>
+    <li>   <%= render partial: "nordstromResults" %> </li>
+    <li>    <%= render partial: 'barneysResults' %> </li>
+    <li>    <%= render partial: "bloomiesResults" %> </li>
+    <li>     <%= render partial: "macysResults" %> </li>
+ 
+    <li>    <%= render partial: "saks" %> </li>
+
+	<% end %>
+
+</div>
+</div>

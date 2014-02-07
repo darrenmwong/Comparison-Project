@@ -7,9 +7,32 @@
 	<% img = info.at_css('.thumbnailImage') %><br>
 	<img src="<%= img.attribute("src") %>"><br>
 	<%=	info.at_css('.shortDescription').text %><br>
-	<%= info.at_css('.prices').text %><br>		
+	<%= info.at_css('.prices').text %><br>	
+
+
+
+
+<%= form_tag( '/comparison/moreInfo/compare', method: "get") do %>
+<%= hidden_field_tag(:price, "#{info.at_css('.prices').text}")  %>
+
+<%= hidden_field_tag(:description, "#{info.at_css('.shortDescription').text}" )%>
+<%= hidden_field_tag(:img, "#{ img.attribute("src") }") %>
+<%= hidden_field_tag(:store_id, "#{@store_id}") %>
+<button type:submit class='btn btn-large'>Compare</button>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+  	
 	<!-- Modal Button -->
-			<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal_<%= @bloom.index(info)%>">
+			<button class="btn btn-info btn-sm" id="modal-id" data-toggle="modal" data-target="#myModal_<%= @bloom.index(info)%>">
   					Product Info
 			</button>
 
@@ -19,7 +42,7 @@
    					<div class="modal-content">
      				    <div class="modal-header">
       					  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      					 	 <h4 class="modal-title" id="myModalLabel">Title</h4>
+      					 	 <h4 class="modal-title" id="myModalLabel"><%= info.at_css('.shortDescription').text %><br></h4>
      					</div>
     <!--Modal Body -->
      		 <div class="modal-body">

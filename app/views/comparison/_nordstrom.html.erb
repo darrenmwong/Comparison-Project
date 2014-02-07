@@ -6,8 +6,38 @@
 			<% nord_img = nords.at_css('img') %>
 			<img class="pictureSize" src="<%= nord_img.attribute('data-original') %>"><br>
 			<%= nords.at_css('a').text %><br>
-			<% modal = nords.at_css('a').text %><br>
 			<%= nords.at_css('.price.regular').text %><br>
+
+
+
+
+			
+
+<%= form_tag( '/comparison/moreInfo/compare', method: "get") do %>
+<%= hidden_field_tag(:price, "#{nords.at_css('.price.regular').text}")  %>
+
+<%= hidden_field_tag(:description, "#{nords.at_css('a').text}" )%>
+<%= hidden_field_tag(:img, "#{nord_img.attribute('data-original')}") %>
+<%= hidden_field_tag(:store_id, "#{@store_id}") %>
+<button type:submit class='btn btn-large'>Compare</button>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<!-- Modal Button -->
 			<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal_<%= @nord.index(nords) %>">
   					Product Info
