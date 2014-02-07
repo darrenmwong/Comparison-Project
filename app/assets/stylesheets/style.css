@@ -1,9 +1,15 @@
+
 .pictureSize {
 height:auto; 
 width:auto; 
 max-width:240px;
 max-height:240px;
 }
+.authDevise {
+	margin-top: 100px;
+}
+
+
 
 .loader {
 	background-image: url(http://i.imgur.com/n9LlmqK.gif);
@@ -21,7 +27,7 @@ max-height:240px;
 	margin-right: -10px;
 	margin-left: -5px;
 	padding: 5px;
-	border-style:solid;
+	border-style: solid;
 	left: 20px;
 }
 
@@ -32,6 +38,7 @@ max-height:240px;
 	color: #000;
 	font-weight: normal;
 	text-align: center;
+
 }
 .darren {
 	position: center;
@@ -39,10 +46,30 @@ max-height:240px;
 
 }
 
-.title {
+.searchBar1 {
+	color: grey;
+	font-family: 'Raleway', sans-serif;
+
+}
+
+.searchTitle {
 	font-size: 50px;
 	padding-bottom: 40px;
-	font-family: Modulus;
+	/*font-family: 'Open Sans Condensed', sans-serif;*/
+	color: white;
+}
+
+.background {
+		background-color: #489BB0;
+}
+.homeButton {
+	width:100px; 
+	height: auto;
+}
+
+
+.imageResultLeft {
+	float: right;
 }
 
 .showRow {
@@ -60,12 +87,13 @@ max-height:240px;
 		text-align: center;
 
 }
-body { overflow-x: hidden;
-	font-family: Arial,Helvetica,Verdana,Sans-serif;
+body 
+{ overflow-x: hidden;
+	font-family: 'Raleway', sans-serif;
 	font-size: 11px;
-	color: #000;
-	font-weight: normal;
+	font-weight: light;
 	text-align: center;
+	margin-top: -30px;
 }
 
 .row {

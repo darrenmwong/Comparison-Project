@@ -1,11 +1,16 @@
+<div class="background">
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 text-center">
 			<div class="darren">
 
+				<img src= "http://i.imgur.com/eDlGBGb.png">
+				<br>
+				<br>
+
 <%= form_tag( 'comparison/search', method: "get") do %>
  
- <div class="title">
+ <div class="searchTitle">
   	<%= label_tag(:search, "Comparison Search") %><br>
  </div>
 
@@ -14,10 +19,23 @@
  </h1>
 
 <%= select_tag(:store_id, options_for_select([['Bloomingdales', 1], ['Macys', 2], ['Nordstrom', 3], ['Barneys', 4], ['Saks Fifth Avenue', 5]]))%>
+<br>
+<br>
 
 
 <!-- Button -->
   <button type:submit class="btn btn-large">Search</button>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br> 
+  <br>
+  <br>
+  <br>
+  <br>
+
 <% end %>
 			</div>
 		</div>
