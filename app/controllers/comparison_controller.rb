@@ -11,8 +11,6 @@ class ComparisonController < ApplicationController
 	def index
 	end
 
-	def modal
-	end
 
 	def moreInfo
 		@price = params[:price]

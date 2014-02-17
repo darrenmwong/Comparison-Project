@@ -9,10 +9,20 @@ gem 'pry'
 # gem 'pry-rails'
 # gem 'awesome_print'
 # gem 'quiet_assets' 
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'rb-fsevent', require: false if RUBY_PLATFORM =~ /darwin/i  
+  gem 'guard-rspec' 
+  gem 'guard-livereload'
+  gem 'dotenv-rails'
 end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
+gem 'redis'
+
+gem 'sidekiq'
 
 gem 'devise'
 
