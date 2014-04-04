@@ -1,18 +1,12 @@
+class ComparisonController < ApplicationController
 	require 'typhoeus'
 	require 'nokogiri'
 	require 'json'
-
-class ComparisonController < ApplicationController
-
-
-
-
+	include ComparisonHelper
 
 	def index
 	end
 
-	def modal
-	end
 
 	def moreInfo
 		@price = params[:price]
