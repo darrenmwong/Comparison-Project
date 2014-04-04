@@ -1,28 +1,13 @@
-== README
+== Comparison Project 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This was the first project at General Assembly that's a web crawler on different department stores. 
 
-Things you may want to cover:
+== Features
 
-* Ruby version
+- Price matching is one of the essential things why i wanted to make this application but its inconsistant on matching the html that it would bring back.
 
-* System dependencies
+- Rebuilding the project on scraping the files on redis with sidekiq for better user experience.
 
-* Configuration
+- Rebuilding the project on backbone.js for more javascript
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+- Users favorites
